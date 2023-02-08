@@ -6,7 +6,7 @@ authors = ["AstragoDE <51675359+AstragoDE@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.12"
 rich = "^13.3.1"
 
 [tool.poetry.group.dev.dependencies]

@@ -45,6 +45,7 @@ files = [
 
 [package.dependencies]
 pycodestyle = ">=2.10.0"
+tomli = {version = "*", markers = "python_version < \"3.11\""}
 
 [[package]]
 name = "cachecontrol"
@@ -796,6 +797,7 @@ crashtest = ">=0.4.1,<0.5.0"
 dulwich = ">=0.20.46,<0.21.0"
 filelock = ">=3.8.0,<4.0.0"
 html5lib = ">=1.0,<2.0"
+importlib-metadata = {version = ">=4.4,<5.0", markers = "python_version < \"3.10\""}
 jsonschema = ">=4.10.0,<5.0.0"
 keyring = ">=23.9.0,<24.0.0"
 lockfile = ">=0.12.2,<0.13.0"
@@ -808,10 +810,14 @@ poetry-plugin-export = ">=1.2.0,<2.0.0"
 requests = ">=2.18,<3.0"
 requests-toolbelt = ">=0.9.1,<0.11.0"
 shellingham = ">=1.5,<2.0"
+tomli = {version = ">=2.0.1,<3.0.0", markers = "python_version < \"3.11\""}
 tomlkit = ">=0.11.1,<0.11.2 || >0.11.2,<0.11.3 || >0.11.3,<1.0.0"
 trove-classifiers = ">=2022.5.19"
 urllib3 = ">=1.26.0,<2.0.0"
-virtualenv = {version = ">=20.4.3,<20.4.5 || >20.4.5,<20.4.6 || >20.4.6,<21.0.0", markers = "sys_platform != \"win32\" or python_version != \"3.9\""}
+virtualenv = [
+    {version = ">=20.4.3,<20.4.5 || >20.4.5,<20.4.6 || >20.4.6,<21.0.0", markers = "sys_platform != \"win32\" or python_version != \"3.9\""},
+    {version = ">=20.4.3,<20.4.5 || >20.4.5,<20.4.6 || >20.4.6,<20.16.6", markers = "sys_platform == \"win32\" and python_version == \"3.9\""},
+]
 xattr = {version = ">=0.10.0,<0.11.0", markers = "sys_platform == \"darwin\""}
 
 [[package]]
@@ -1204,6 +1210,18 @@ files = [
 ]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+
+[[package]]
 name = "tomlkit"
 version = "0.11.6"
 description = "Style preserving TOML library"
@@ -1243,6 +1261,27 @@ files = [
 brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
 secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[[package]]
+name = "virtualenv"
+version = "20.16.5"
+description = "Virtual Python Environment builder"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "virtualenv-20.16.5-py3-none-any.whl", hash = "sha256:d07dfc5df5e4e0dbc92862350ad87a36ed505b978f6c39609dc489eadd5b0d27"},
+    {file = "virtualenv-20.16.5.tar.gz", hash = "sha256:227ea1b9994fdc5ea31977ba3383ef296d7472ea85be9d6732e42a91c04e80da"},
+]
+
+[package.dependencies]
+distlib = ">=0.3.5,<1"
+filelock = ">=3.4.1,<4"
+platformdirs = ">=2.4,<3"
+
+[package.extras]
+docs = ["proselint (>=0.13)", "sphinx (>=5.1.1)", "sphinx-argparse (>=0.3.1)", "sphinx-rtd-theme (>=1)", "towncrier (>=21.9)"]
+testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7)", "packaging (>=21.3)", "pytest (>=7.0.1)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.2)", "pytest-mock (>=3.6.1)", "pytest-randomly (>=3.10.3)", "pytest-timeout (>=2.1)"]
 
 [[package]]
 name = "virtualenv"
@@ -1380,5 +1419,5 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 
 [metadata]
 lock-version = "2.0"
-python-versions = "3.11.1"
-content-hash = "c6211fbb00b3d1e248bc23d785b501a4071be3b2b4f79e14500ab582a8db634e"
+python-versions = ">=3.9,<3.12"
+content-hash = "9f02143b080f7811cf97bae7593059f2b2081d3dbc8ceeef8471cb101a2bd355"
