@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "template"
+name = "python_poetry_template"
 version = "0.1.0"
 description = ""
 authors = ["AstragoDE <51675359+AstragoDE@users.noreply.github.com>"]
+license = "python_poetry_template © 2023 by AstragoDE is licensed under CC BY 4.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
