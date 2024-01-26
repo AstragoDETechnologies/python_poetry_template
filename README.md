@@ -1,1 +1,1 @@
-# Python Poetry (3.9) Template by AstragoDE
+# Python Poetry (3.12) Template by AstragoDE

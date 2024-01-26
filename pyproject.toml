@@ -11,7 +11,7 @@ python = ">=3.12,<3.13"
 rich = "^13.4.2"
 
 [tool.poetry.group.dev.dependencies]
-autopep8 = "^2.0.4"
+black = "^24.1.0"
 pyinstaller = "^6.2.0"
 
 [build-system]
