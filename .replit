@@ -18,3 +18,10 @@ start = "rust-analyzer"
 
 [languages.python]
 pattern = "**/*.py"
+
+[unitTest]
+language = "python3"
+
+[deployment]
+run = ["python3", "main.py"]
+deploymentTarget = "cloudrun"
